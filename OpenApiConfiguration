@@ -1,0 +1,16 @@
+/**
+ * Created by Maxim Bezmen.
+ */
+@Configuration
+public class OpenApiConfiguration {
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI().info(new Info().title("Name of project").version("1"))
+                .components(new Components().addSecuritySchemes("bearer-jwt",
+                        new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT")
+                                .in(SecurityScheme.In.HEADER).name("Authorization")))
+                .addSecurityItem(
+                        new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read", "write")));
+    }
+}
