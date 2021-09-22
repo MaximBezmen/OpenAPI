@@ -3,5 +3,5 @@
         ``` <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc.version}</version>
+            <version>1.5.9</version>
         </dependency> ```
